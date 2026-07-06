@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.print-root {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  body {
+    background: #ffffff !important;
+  }
+
+  /* Hide the app UI; only the invoice shows */
+  .no-print-input,
+  .no-print-input * {
+    display: none !important;
+  }
+
+  .print-root {
+    display: block !important;
+  }
+}
